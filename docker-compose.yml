@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./test:/home/test
+    working_dir: /home/test
+volumes:
+  test:
